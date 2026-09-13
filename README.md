@@ -1,5 +1,8 @@
 # agentic-starter
 
+[![check](https://github.com/benning-lab/agentic-starter/actions/workflows/check.yml/badge.svg)](https://github.com/benning-lab/agentic-starter/actions/workflows/check.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 The working parts of a research Claude Code setup: the files that give it project memory, the
 hooks that carry context between sessions, a terminal config for running several sessions at
 once, and a recipe for teaching it a technical domain it gets wrong.

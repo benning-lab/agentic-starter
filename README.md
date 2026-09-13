@@ -102,6 +102,20 @@ renamed two versions ago, which parses clean and fails at runtime) or **in the w
 - For expert-review skills, keep the lenses separate and let them disagree. A blend is a generic
   skeptic, which is what you already had.
 
+## Credit
+
+The shape of this — publishing a working setup as a public resource, with the actual files
+attached rather than described — I took from **[Chris Blattman](https://claudeblattman.com/)**
+(political economist, UChicago Harris), whose site is where I learned most of what I know about
+running research through a coding agent. Several conventions here started as his and were adapted
+rather than invented: the project-context file as the centre of the setup, writing procedures down
+as reusable commands, and publishing the files so someone can copy a working thing instead of
+assembling one. His site is MIT-licensed and so is this.
+
+Read his first if you are starting out: <https://claudeblattman.com/>
+
+The prose guides that accompany this repo are at <https://benninglab.org/agentic/>.
+
 ## Licence
 
 MIT. Use any of it.

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Install the hooks and settings from this repo into ~/.claude/.
 #
-# Symlinks rather than copies, so `git pull` here updates your setup with no reinstall.
+# Hooks and dotfiles are referenced in place, so `git pull` here updates them with no reinstall.
+# settings.json is the exception: it is written once, as a copy, and never touched again.
 # Never overwrites an existing real file — it reports the collision and skips.
 #
 #   ./install.sh             install / update
@@ -76,11 +77,12 @@ done
 head_ "Settings"
 SETTINGS="$CLAUDE_DIR/settings.json"
 if [ -e "$SETTINGS" ]; then
-  say "$SETTINGS exists — not touching it."
-  say "To turn the hooks on, merge the \"hooks\" block from:"
-  say "  $REPO/settings.template.json"
-  say "replacing __REPO__ with:"
-  say "  $REPO"
+  say "COLLISION $SETTINGS exists — not touching it."
+  say "          The hooks are NOT on yet. To turn them on, merge the \"hooks\" block from:"
+  say "            $REPO/settings.template.json"
+  say "          replacing __REPO__ with:"
+  say "            $REPO"
+  collided=$((collided+1))
 else
   if [ "$DRY" = 0 ]; then
     sed "s|__REPO__|$REPO|g" "$REPO/settings.template.json" > "$SETTINGS"
@@ -110,7 +112,8 @@ say "linked: $ok   collisions: $collided"
 if [ "$collided" -gt 0 ]; then
   say ""
   say "Some items were skipped because you already have your own version."
-  say "Nothing was overwritten."
+  say "Nothing was overwritten. Anything reported as a COLLISION above is NOT active"
+  say "until you merge it in yourself."
 fi
 head_ "Next: read CONVENTIONS.md, then restart any running Claude Code session."
 printf '\n'

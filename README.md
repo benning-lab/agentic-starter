@@ -15,14 +15,29 @@ Nothing here is required to use Claude Code. Start with the four files and add t
 specific thing annoys you.
 
 ```bash
-git clone https://github.com/benning-lab/agentic-starter.git
-cd agentic-starter
-./install.sh --check      # see what it would do
+git clone https://github.com/benning-lab/agentic-starter.git ~/agentic-starter
+cd ~/agentic-starter
+./install.sh --check      # see what it would do, change nothing
 ./install.sh              # do it
 ```
 
-The installer symlinks into `~/.claude/`, so updating is `git pull` and nothing else. It never
-overwrites a file you already have: it reports the collision and skips.
+No git? Use **Code → Download ZIP** above and unzip it. The same files; you just miss updates.
+
+**Put the folder somewhere it can stay.** The hooks run from here, in place — nothing is copied
+into a system directory — so moving or deleting this folder later switches them off, silently.
+
+What `install.sh` actually does, on a default run:
+
+- writes `~/.claude/settings.json` from `settings.template.json`, pointing at the hooks in this
+  folder, **only if you do not already have that file**. If you do, it changes nothing and prints
+  the block for you to paste in yourself;
+- creates `~/.claude/commands`, `~/.claude/skills` and `~/.claude-assistant/session-records` if
+  they are missing;
+- with `--dotfiles`, symlinks `~/.tmux.conf` and `~/.config/ghostty/config` to the copies here.
+
+It never overwrites a file you already have: it reports the collision and skips. Because the hooks
+and dotfiles are referenced in place, `git pull` updates them with no reinstall — `settings.json`
+is the exception, since that one is a copy.
 
 ## What is here
 

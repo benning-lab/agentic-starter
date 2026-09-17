@@ -24,7 +24,8 @@ cd ~/agentic-starter
 No git? Use **Code → Download ZIP** above and unzip it. The same files; you just miss updates.
 
 **Put the folder somewhere it can stay.** The hooks run from here, in place — nothing is copied
-into a system directory — so moving or deleting this folder later switches them off, silently.
+into a system directory — so moving or deleting this folder later switches them off. The shell
+reports the missing file, but the symptom you notice is the handoff no longer appearing.
 
 What `install.sh` actually does, on a default run:
 

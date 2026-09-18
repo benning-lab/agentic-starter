@@ -2,6 +2,11 @@
 
 Notable changes to this repo. Dates are when the change landed.
 
+## 2026-09-18
+
+- `dotfiles/shell-cc.bash` — a plain-bash port of `shell-cc.zsh` (works with the 3.2 that ships
+  with macOS), same behavior, for anyone using bash instead of zsh.
+
 ## 2026-09-13
 
 - `CONTRIBUTING.md`, `SECURITY.md` and this file added, ahead of the repo going public.

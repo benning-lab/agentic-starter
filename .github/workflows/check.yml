@@ -22,7 +22,7 @@ jobs:
 
       - name: Shell syntax
         run: |
-          for f in install.sh bin/*.sh hooks/*.sh; do
+          for f in install.sh bin/*.sh hooks/*.sh dotfiles/shell-cc.bash; do
             bash -n "$f" && echo "ok   $f"
           done
           zsh -n dotfiles/shell-cc.zsh && echo "ok   dotfiles/shell-cc.zsh"

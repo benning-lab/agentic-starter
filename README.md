@@ -83,13 +83,13 @@ session start is a hook you will turn off within a week.
 
 Optional, and the thing that changes daily use most if you work on several projects.
 
-`dotfiles/shell-cc.zsh` defines `cc`: fuzzy-match a project folder by name, open a tmux window
-there, start Claude Code in it. One live session per project, all of them persisting, instead of
-one at a time.
+`dotfiles/shell-cc.zsh` (and `shell-cc.bash`, a plain-bash port with identical behavior) defines
+`cc`: fuzzy-match a project folder by name, open a tmux window there, start Claude Code in it.
+One live session per project, all of them persisting, instead of one at a time.
 
 ```bash
 export CC_PROJECT_ROOTS="$HOME/projects:$HOME/work/active"
-source /path/to/agentic-starter/dotfiles/shell-cc.zsh
+source /path/to/agentic-starter/dotfiles/shell-cc.zsh    # zsh; use shell-cc.bash from ~/.bashrc
 
 cc spacetime       # matches 2026_CxSpaceTime, opens a window, starts Claude
 cc                 # attach to the session

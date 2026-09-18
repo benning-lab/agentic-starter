@@ -99,7 +99,7 @@ if [ "$DOTFILES" = 1 ]; then
   if [ "$DRY" = 0 ]; then mkdir -p "$HOME/.config/ghostty"; fi
   link "$REPO/dotfiles/ghostty.config" "$HOME/.config/ghostty/config"
   say ""
-  say "For the cc launcher, add to ~/.zshrc:"
+  say "For the cc launcher, add to ~/.zshrc (or ~/.bashrc, using shell-cc.bash):"
   say "  export CC_PROJECT_ROOTS=\"\$HOME/projects\""
   say "  source $REPO/dotfiles/shell-cc.zsh"
 else

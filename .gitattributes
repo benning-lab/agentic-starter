@@ -1,0 +1,5 @@
+# Shell and Python scripts must keep LF endings, or bash fails on Windows clones
+# (Git for Windows defaults to core.autocrlf=true).
+*.sh text eol=lf
+*.py text eol=lf
+*.zsh text eol=lf

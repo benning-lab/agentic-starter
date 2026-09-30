@@ -30,8 +30,8 @@ reports the missing file, but the symptom you notice is the handoff no longer ap
 What `install.sh` actually does, on a default run:
 
 - writes `~/.claude/settings.json` from `settings.template.json`, pointing at the hooks in this
-  folder, **only if you do not already have that file**. If you do, it changes nothing and prints
-  the block for you to paste in yourself;
+  folder, **only if you do not already have that file**. If you do, it changes nothing and tells
+  you where the hooks block is and what to replace `__REPO__` with;
 - creates `~/.claude/commands`, `~/.claude/skills` and `~/.claude-assistant/session-records` if
   they are missing;
 - with `--dotfiles`, symlinks `~/.tmux.conf` and `~/.config/ghostty/config` to the copies here.

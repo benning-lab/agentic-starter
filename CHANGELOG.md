@@ -2,6 +2,13 @@
 
 Notable changes to this repo. Dates are when the change landed.
 
+## 2026-09-30
+
+- `.gitattributes` keeps `.sh`, `.py` and `.zsh` files at LF endings, so the installer and hooks
+  run from a Windows clone.
+- README: the installer reports where the hooks block is when you already have settings; it does
+  not print the block.
+
 ## 2026-09-13
 
 - `CONTRIBUTING.md`, `SECURITY.md` and this file added, ahead of the repo going public.
